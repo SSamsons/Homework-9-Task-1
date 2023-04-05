@@ -41,13 +41,13 @@ public class Radio {
         currentWave = newCurrentWave;
     }
 
-    public void increaseWave() {
+    public void next() {
         if (currentWave < 9) {
             currentWave = currentWave + 1;
         }
     }
 
-    public void decreaseWave() {
+    public void prev() {
         if (currentWave > 0) {
             currentWave = currentWave - 1;
         }

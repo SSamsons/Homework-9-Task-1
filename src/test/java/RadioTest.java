@@ -83,7 +83,7 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentWave(5);
 
-        radio.increaseWave();
+        radio.next();
 
         int expected = 6;
         int actual = radio.getCurrentWave();
@@ -96,7 +96,7 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentWave(5);
 
-        radio.decreaseWave();
+        radio.prev();
 
         int expected = 4;
         int actual = radio.getCurrentWave();
@@ -109,7 +109,7 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentWave(9);
 
-        radio.increaseWave();
+        radio.next();
 
         int expected = 9;
         int actual = radio.getCurrentWave();
@@ -122,7 +122,7 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentWave(0);
 
-        radio.decreaseWave();
+        radio.prev();
 
         int expected = 0;
         int actual = radio.getCurrentWave();
