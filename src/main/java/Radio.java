@@ -1,55 +1,48 @@
 public class Radio {
-    public int currentVolume;
-    public int currentWave;
+    private int minWave = 0;
+    private int maxWave = 9;
+    private int currentWave = minWave;
 
-    public int getCurrentVolume() {
-        return currentVolume;
+    public Radio() {
     }
-
-    public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume < 0) {
-            return;
-        }
-        if (newCurrentVolume > 100) {
-            return;
-        }
-        currentVolume = newCurrentVolume;
-    }
-
-    public void increaseVolume() {
-        if (currentVolume < 100) {
-            currentVolume = currentVolume + 1;
-        }
-    }
-    public void decreaseVolume() {
-        if (currentVolume > 0) {
-            currentVolume = currentVolume - 1;
-        }
+    public Radio(int size) {
+        maxWave = minWave + size - 1;
     }
 
     public int getCurrentWave() {
         return currentWave;
     }
+    public int getMaxWave() {
+        return maxWave;
+    }
+    public int getMinWave() {
+        return minWave;
+    }
 
-    public void setCurrentWave (int newCurrentWave) {
-        if (newCurrentWave < 0) {
+    public void setCurrentWave(int newCurrentWave) {
+        if (newCurrentWave < minWave) {
             return;
         }
-        if (newCurrentWave > 9) {
+        if (newCurrentWave > maxWave) {
             return;
         }
         currentWave = newCurrentWave;
     }
 
+
     public void next() {
-        if (currentWave < 9) {
+        if (currentWave < maxWave) {
             currentWave = currentWave + 1;
+        } else {
+            currentWave = minWave;
         }
     }
-
     public void prev() {
-        if (currentWave > 0) {
+        if (currentWave > minWave) {
             currentWave = currentWave - 1;
+        } else {
+            currentWave = maxWave;
         }
     }
 }
+
