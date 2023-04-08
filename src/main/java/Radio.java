@@ -1,28 +1,39 @@
 public class Radio {
-    public int currentVolume;
-    public int currentWave;
+    private int minVolume = 0;
+    private int maxVolume = 100;
+    private int currentVolume = minVolume;
+   private int minWave = 0;
+   private int maxWave = 9;
+    private int currentWave = minWave;
 
     public int getCurrentVolume() {
         return currentVolume;
     }
+    public int getMinVolume() {
+        return minVolume;
+    }
+    public int getMaxVolume() {
+        return maxVolume;
+    }
+
 
     public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume < 0) {
+        if (newCurrentVolume < minVolume) {
             return;
         }
-        if (newCurrentVolume > 100) {
+        if (newCurrentVolume > maxVolume) {
             return;
         }
         currentVolume = newCurrentVolume;
     }
 
     public void increaseVolume() {
-        if (currentVolume < 100) {
+        if (currentVolume < maxVolume) {
             currentVolume = currentVolume + 1;
         }
     }
     public void decreaseVolume() {
-        if (currentVolume > 0) {
+        if (currentVolume > minVolume) {
             currentVolume = currentVolume - 1;
         }
     }
@@ -30,26 +41,36 @@ public class Radio {
     public int getCurrentWave() {
         return currentWave;
     }
+    public int getMinWave(){
+        return minWave;
+    }
+    public int getMaxWave() {
+        return maxWave;
+    }
 
     public void setCurrentWave (int newCurrentWave) {
-        if (newCurrentWave < 0) {
+        if (newCurrentWave < minWave) {
             return;
         }
-        if (newCurrentWave > 9) {
+        if (newCurrentWave > maxWave) {
             return;
         }
         currentWave = newCurrentWave;
     }
 
     public void next() {
-        if (currentWave < 9) {
+        if (currentWave < maxWave) {
             currentWave = currentWave + 1;
+        } else {
+            currentWave = minWave;
         }
     }
 
     public void prev() {
-        if (currentWave > 0) {
+        if (currentWave > minWave) {
             currentWave = currentWave - 1;
+        } else {
+            currentWave = maxWave;
         }
     }
 }
