@@ -89,6 +89,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldNotSetMaxDecreaseVolumeAboveMax() {
         Radio radio = new Radio();
@@ -102,7 +103,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldMinWave(){
+    public void shouldMinWave() {
         Radio radio = new Radio();
         radio.setCurrentWave(0);
 
@@ -113,7 +114,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldMaxWave(){
+    public void shouldMaxWave() {
         Radio radio = new Radio();
         radio.setCurrentWave(9);
 
@@ -122,6 +123,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void sholudIncreaseWave() {
         Radio radio = new Radio();
@@ -175,7 +177,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldNotSetMaxIncreaseWaveAboveMax () {
+    public void shouldNotSetMaxIncreaseWaveAboveMax() {
         Radio radio = new Radio();
         radio.setCurrentWave(12);
 
@@ -186,7 +188,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldNotSetMinDecreaseWaveAboveMin () {
+    public void shouldNotSetMinDecreaseWaveAboveMin() {
         Radio radio = new Radio();
         radio.setCurrentWave(-2);
 
